@@ -37,6 +37,18 @@ public actual class Tty internal constructor(
 		}
 	}
 
+	public actual val stdinIsTty: Boolean get() {
+		return tty_stdin_is_tty(ptr)
+	}
+
+	public actual val stdoutIsTty: Boolean get() {
+		return tty_stdout_is_tty(ptr)
+	}
+
+	public actual val stderrIsTty: Boolean get() {
+		return tty_stderr_is_tty(ptr)
+	}
+
 	private var ptr: CPointer<MosaicTty>? = ptr
 	private var callbackPtrAndRef: Pair<CPointer<MosaicTtyCallback>, StableRef<Callback>>? = null
 

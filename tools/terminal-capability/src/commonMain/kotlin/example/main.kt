@@ -31,6 +31,8 @@ private class TerminalCapabilityCommand : CliktCommand("terminal-capability") {
 			buildString {
 				appendLine(terminal.name)
 				appendLine()
+				appendLine("stdin tty? ${tty.stdinIsTty}  stdout tty? ${tty.stdoutIsTty}  stderr tty? ${tty.stderrIsTty}")
+				appendLine()
 				Terminal.Capabilities::class
 					.members
 					.filterIsInstance<KProperty<*>>()

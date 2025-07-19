@@ -29,6 +29,13 @@ final class com.jakewharton.mosaic.tty/TestTty : kotlin/AutoCloseable { // com.j
 }
 
 final class com.jakewharton.mosaic.tty/Tty : kotlin/AutoCloseable { // com.jakewharton.mosaic.tty/Tty|null[0]
+    final val stderrIsTty // com.jakewharton.mosaic.tty/Tty.stderrIsTty|{}stderrIsTty[0]
+        final fun <get-stderrIsTty>(): kotlin/Boolean // com.jakewharton.mosaic.tty/Tty.stderrIsTty.<get-stderrIsTty>|<get-stderrIsTty>(){}[0]
+    final val stdinIsTty // com.jakewharton.mosaic.tty/Tty.stdinIsTty|{}stdinIsTty[0]
+        final fun <get-stdinIsTty>(): kotlin/Boolean // com.jakewharton.mosaic.tty/Tty.stdinIsTty.<get-stdinIsTty>|<get-stdinIsTty>(){}[0]
+    final val stdoutIsTty // com.jakewharton.mosaic.tty/Tty.stdoutIsTty|{}stdoutIsTty[0]
+        final fun <get-stdoutIsTty>(): kotlin/Boolean // com.jakewharton.mosaic.tty/Tty.stdoutIsTty.<get-stdoutIsTty>|<get-stdoutIsTty>(){}[0]
+
     final fun close() // com.jakewharton.mosaic.tty/Tty.close|close(){}[0]
     final fun currentSize(): kotlin/IntArray // com.jakewharton.mosaic.tty/Tty.currentSize|currentSize(){}[0]
     final fun enableRawMode() // com.jakewharton.mosaic.tty/Tty.enableRawMode|enableRawMode(){}[0]

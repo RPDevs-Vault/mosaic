@@ -14,6 +14,10 @@ public expect class Tty : AutoCloseable {
 		public fun tryBind(): Tty?
 	}
 
+	public val stdinIsTty: Boolean
+	public val stdoutIsTty: Boolean
+	public val stderrIsTty: Boolean
+
 	/**
 	 * Set or clear the callback used for reporting events about the terminal using platform-specific
 	 * integration. The callback may be invoked on any thread and must never throw an exception.

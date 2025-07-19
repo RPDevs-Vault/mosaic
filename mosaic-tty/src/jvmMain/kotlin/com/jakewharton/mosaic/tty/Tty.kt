@@ -14,6 +14,18 @@ public actual class Tty internal constructor(
 		}
 	}
 
+	public actual val stdinIsTty: Boolean get() {
+		return Jni.ttyStdinIsTty(ttyPtr)
+	}
+
+	public actual val stdoutIsTty: Boolean get() {
+		return Jni.ttyStdoutIsTty(ttyPtr)
+	}
+
+	public actual val stderrIsTty: Boolean get() {
+		return Jni.ttyStderrIsTty(ttyPtr)
+	}
+
 	private var callbackPtr = 0L
 
 	public actual fun setCallback(callback: Callback?) {

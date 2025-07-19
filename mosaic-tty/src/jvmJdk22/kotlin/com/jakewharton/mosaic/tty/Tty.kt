@@ -10,6 +10,9 @@ import com.jakewharton.mosaic.tty.Libmosaic.tty_read
 import com.jakewharton.mosaic.tty.Libmosaic.tty_readWithTimeout
 import com.jakewharton.mosaic.tty.Libmosaic.tty_reset
 import com.jakewharton.mosaic.tty.Libmosaic.tty_setCallback
+import com.jakewharton.mosaic.tty.Libmosaic.tty_stderr_is_tty
+import com.jakewharton.mosaic.tty.Libmosaic.tty_stdin_is_tty
+import com.jakewharton.mosaic.tty.Libmosaic.tty_stdout_is_tty
 import com.jakewharton.mosaic.tty.Libmosaic.tty_write
 import java.lang.foreign.Arena
 import java.lang.foreign.MemorySegment
@@ -40,6 +43,18 @@ public class Tty internal constructor(
 			}
 			throw OutOfMemoryError()
 		}
+	}
+
+	public val stdinIsTty: Boolean get() {
+		return tty_stdin_is_tty(ttyPtr)
+	}
+
+	public val stdoutIsTty: Boolean get() {
+		return tty_stdout_is_tty(ttyPtr)
+	}
+
+	public val stderrIsTty: Boolean get() {
+		return tty_stderr_is_tty(ttyPtr)
 	}
 
 	private var callbackArena: Arena? = null
